@@ -1,10 +1,10 @@
+import { ApiModule } from '@api/api.module';
 import { INestiaConfig } from '@nestia/sdk';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './src/app.module';
 
 const NESTIA_CONFIG: INestiaConfig = {
   input: async () => {
-    const app = await NestFactory.create(AppModule);
+    const app = await NestFactory.create(ApiModule);
     // const app = await NestFactory.create(YourModule, new FastifyAdaptor());
     // app.setGlobalPrefix("api");
     // app.enableVersioning({
