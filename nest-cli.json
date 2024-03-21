@@ -4,7 +4,8 @@
   "sourceRoot": "apps/api/src",
   "monorepo": true,
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true
   },
   "projects": {
     "prisma": {
