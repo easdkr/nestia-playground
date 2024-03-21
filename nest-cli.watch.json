@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/api/src",
+  "monorepo": true,
+  "compilerOptions": {
+    "deleteOutDir": true
+  },
+  "projects": {
+    "prisma": {
+      "type": "library",
+      "root": "libs/prisma",
+      "entryFile": "index",
+      "sourceRoot": "libs/prisma/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/prisma/tsconfig.lib.json"
+      }
+    },
+    "configs": {
+      "type": "library",
+      "root": "libs/configs",
+      "entryFile": "index",
+      "sourceRoot": "libs/configs/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/configs/tsconfig.lib.json"
+      }
+    },
+    "api": {
+      "type": "application",
+      "root": "apps/api",
+      "entryFile": "main",
+      "sourceRoot": "apps/api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api/tsconfig.app.json"
+      }
+    }
+  }
+}

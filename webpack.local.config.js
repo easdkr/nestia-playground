@@ -13,10 +13,11 @@ module.exports = {
   },
   optimization: {
     minimize: true,
+    nodeEnv: 'local',
   },
   // JUST KEEP THEM
   externals: [nodeExternals()],
-  mode: 'development',
+  mode: 'production',
   target: 'node',
   module: {
     rules: [
