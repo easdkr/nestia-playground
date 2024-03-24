@@ -24,11 +24,11 @@
     "prepare": "ts-patch install && typia patch",
     "env:local": "dotenv -e libs/configs/env/.env.local",
     "prisma:generate:local": "dotenv -e .env.local prisma generate",
-    "prisma:push:local": "yarn env:local prisma db push",
-    "prisma:pull:local": "yarn env:local prisma db pull",
-    "prisma:migrate:create:local": "yarn env:local prisma migrate dev",
-    "prisma:migrate:commit:local": "yarn env:local prisma migrate deploy",
-    "prisma:studio:local": "yarn env:local prisma studio"
+    "prisma:push:local": "dotenv -e libs/configs/env/.env.local -- npx prisma db push",
+    "prisma:pull:local": "dotenv -e libs/configs/env/.env.local -- npx prisma db pull",
+    "prisma:migrate:create:local": "dotenv -e libs/configs/env/.env.local -- npx prisma migrate dev --create-only",
+    "prisma:migrate:commit:local": "dotenv -e libs/configs/env/.env.local -- npx prisma migrate deploy",
+    "prisma:studio:local": "dotenv -e libs/configs/env/.env.local -- npx prisma studio"
   },
   "dependencies": {
     "@nestia/core": "^2.5.16",
