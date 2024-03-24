@@ -42,6 +42,7 @@
     "@prisma/client": "5.11.0",
     "kysely": "^0.27.3",
     "pg": "^8.11.3",
+    "prisma-extension-kysely": "^2.1.0",
     "prisma-kysely": "^1.8.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",

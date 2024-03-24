@@ -5042,6 +5042,11 @@ pretty-format@^29.0.0, pretty-format@^29.7.0:
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
 
+prisma-extension-kysely@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/prisma-extension-kysely/-/prisma-extension-kysely-2.1.0.tgz#1faec977ebc8c739ba02e8cff29623eb08bde35c"
+  integrity sha512-s1hujYjrNzfQc9Z79s93464mkTkkt9ZPqPELDRFe9jEmiIlM/JRXZtqIyyN3FM0GDkN/BDPVtpPtdC52XnjAcQ==
+
 prisma-kysely@^1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/prisma-kysely/-/prisma-kysely-1.8.0.tgz#e14c077bbd6a143a301bb75d9f2701bfd580d820"
