@@ -1,10 +1,12 @@
-import {
-  Injectable,
-  Logger,
-  OnModuleDestroy,
-  OnModuleInit,
-} from '@nestjs/common';
+/* eslint-disable @typescript-eslint/no-unsafe-declaration-merging */
+import { Injectable, OnApplicationShutdown } from '@nestjs/common';
 import { Prisma, PrismaClient } from '@prisma/client';
+import { Kysely } from 'kysely';
+import { DB } from 'libs/prisma/generated/types';
+
+export interface PrismaService {
+  $kysely: Kysely<DB>;
+}
 
 @Injectable()
 export class PrismaService
@@ -12,9 +14,9 @@ export class PrismaService
     Prisma.PrismaClientOptions,
     'query' | 'info' | 'warn' | 'error'
   >
-  implements OnModuleInit, OnModuleDestroy
+  implements OnApplicationShutdown
 {
-  public constructor(private readonly logger: Logger) {
+  public constructor() {
     super({
       log: [
         {
@@ -37,17 +39,8 @@ export class PrismaService
     });
   }
 
-  public async onModuleInit() {
-    console.log('onModuleInit');
-    await this.$connect();
-    this.$on('query', (e) => {
-      this.logger.verbose(`Query: ${e.query}`);
-      this.logger.verbose(`Params: ${e.params}`);
-      this.logger.verbose(`Duration: ${e.duration} ms`);
-    });
-  }
-
-  public async onModuleDestroy() {
+  async onApplicationShutdown() {
     await this.$disconnect();
+    console.log('Prisma disconnected.');
   }
 }

@@ -4,7 +4,7 @@ import { ConfigModule } from '@common/configs';
 import { PrismaModule } from '@common/prisma';
 import { Module } from '@nestjs/common';
 @Module({
-  imports: [ConfigModule, PrismaModule],
+  imports: [ConfigModule, PrismaModule.forRootAsync()],
   controllers: [ApiController],
   providers: [ApiService],
 })
