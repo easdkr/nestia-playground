@@ -14,7 +14,7 @@
     "start:local:watch": "NODE_ENV=local nest start --watch -c nest-cli.watch.json",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/src/main",
-    "db:local": "docker compose -f docker-compose.db.local.yaml --env-file .env.local up -d",
+    "db:local": "docker compose -f docker-compose.db.local.yaml --env-file libs/configs/env/.env.local up -d",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
