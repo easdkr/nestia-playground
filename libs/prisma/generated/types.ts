@@ -6,16 +6,16 @@ export type Generated<T> =
 export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 
 export type Password = {
-  id: Generated<string>;
-  user_id: string;
+  id: Generated<number>;
+  user_id: number;
   password: string;
   created_at: Generated<Timestamp>;
   updated_at: Timestamp;
   deleted_at: Timestamp | null;
 };
 export type Profile = {
-  id: Generated<string>;
-  user_id: string;
+  id: Generated<number>;
+  user_id: number;
   first_name: string;
   middle_name: string | null;
   last_name: string;
@@ -24,7 +24,7 @@ export type Profile = {
   deleted_at: Timestamp | null;
 };
 export type User = {
-  id: Generated<string>;
+  id: Generated<number>;
   email: string;
   authentication_type: Generated<string>;
   created_at: Generated<Timestamp>;

@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "_users" (
-    "id" BIGSERIAL NOT NULL,
+    "id" SERIAL NOT NULL,
     "email" TEXT NOT NULL,
     "authentication_type" TEXT NOT NULL DEFAULT 'email',
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -12,7 +12,7 @@ CREATE TABLE "_users" (
 
 -- CreateTable
 CREATE TABLE "profiles" (
-    "id" BIGSERIAL NOT NULL,
+    "id" SERIAL NOT NULL,
     "user_id" BIGINT NOT NULL,
     "first_name" TEXT NOT NULL,
     "middle_name" TEXT,
@@ -26,7 +26,7 @@ CREATE TABLE "profiles" (
 
 -- CreateTable
 CREATE TABLE "passwords" (
-    "id" BIGSERIAL NOT NULL,
+    "id" SERIAL NOT NULL,
     "user_id" BIGINT NOT NULL,
     "password" TEXT NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
