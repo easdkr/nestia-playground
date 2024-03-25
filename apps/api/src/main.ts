@@ -4,7 +4,7 @@ import { ApiModule } from '@api/api.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApiModule);
-  setOpenApi(app);
+  setOpenApi(app, { runOnApplicationBootstrap: true });
   app.enableShutdownHooks();
 
   await app.listen(3000);
