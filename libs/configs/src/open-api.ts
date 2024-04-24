@@ -10,12 +10,15 @@ type Option = {
 
 export function setOpenApi(app: INestApplication, option?: Option): void {
   const logger = new Logger('OpenAPI');
-  execSync('npx nestia swagger');
+  execSync('NODE_ENV=local npx nestia swagger');
   logger.verbose('OpenAPI spec is generated');
 
   if (!option?.runOnApplicationBootstrap) return;
 
-  const swagger = readFileSync(path.join(__dirname, '../swagger.json'), 'utf8');
+  const swagger = readFileSync(
+    path.join(__dirname, '../../../swagger.json'),
+    'utf8',
+  );
   const document = JSON.parse(swagger);
 
   SwaggerModule.setup('api/docs', app, document);
